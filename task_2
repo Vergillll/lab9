@@ -1,0 +1,33 @@
+print("Input N, W, S or E")
+C = str(input())
+print("input 1, 0 or -1")
+N = int(input())
+if C == "N":
+    if N == 1:
+        C = "E"
+    if N == -1:
+        C = "W"
+    if N == 0:
+        C = C
+elif C == "W":
+    if N == 1:
+        C = "N"
+    if N == -1:
+        C = "S"
+    if N == 0:
+        C = C
+elif C == "S":
+    if N == 1:
+        C = "E"
+    if N == -1:
+        C = "W"
+    if N == 0:
+        C = C
+elif C == "E":
+    if N == 1:
+        C = "S"
+    if N == -1:
+        C = "N"
+    if N == 0:
+        C = C
+print(C)
