@@ -1,7 +1,23 @@
 day = int(input())
 mounth = int(input())
-daym = ["первое", "второе", "третье", "четвёртое", "пятое", "шестое", "седьмое", "девятое", "десятое",
-"одиннадцатое", "двеннадцатое", "тринадцатое", "пятнадцатое", "шестнадцатое", "семнадцатое", "восемнадцатое", "девятнадцатое", "двадцатое",
-"двадцать", "тридцать"]
-mounthm = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"]
-print(daym[day-1]+" "+mounthm[mounth-1])
+
+s = "The "
+
+daym = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eights","ninth", "tenth",
+"eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "sixteenth", "the eighteenth", "nineteenth",
+"twentieth", "twenty", "thirtieth", "thirty"]
+mounthm = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+if day<=10:
+    s = s+ daym[day-1]+" of "
+elif day<= 20:
+    s = s+ daym[day-1]+" of "
+elif day>20 and day<30:
+    s = s+ daym[20]+" "+daym[day-21]+" of "
+elif day==30:
+    s = s+ daym[21]+" of "
+elif day>30:
+    s = s+ daym[22]+" "+daym[day-31]+" of "
+
+s = s+mounthm[mounth-1]
+print(s)
