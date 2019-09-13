@@ -2,8 +2,29 @@
 # 1 учебное занятие
 # 2, 3, 4 учебных занятия
 # 5, 6, 7, 8, 9, 10 учебных занятий
+# coding: utf8
 A = ["odno", "dva", "tri", "chetyre","pyat","shest","sem", "vosem","devyat","desyat",
-"odinnadtsat","dvennadtsat","trinnadtsat","chetyrnadsat","pyatnadsat","shestnadsat", "semnadsat", "devyatnadsat",
+"odinnadtsat","dvennadtsat","trinnadtsat","chetyrnadsat","pyatnadsat","shestnadsat", "semnadsat","vosemnyadsat", "devyatnadsat",
 "dvadtsat","tridsat","sorok"]
 B = ["uchebnoe", "uchebnyh"]
 C = ["zanyatie", "zanyatie", "zanyatiy"]
+S = ""
+H = int(input())
+
+if H>=10 and H<=20:
+    S = S + A[H-1]
+elif H>20:
+    if H<30:
+        S = S + A[19] +" " + A[H-21]
+    elif H == 30:
+        S = S + A[20]
+    elif H>30 and H<40:
+        S = S + A[20] + " " + A[H-31]
+    elif H == 40:
+        S = S + A[21]
+        
+if H >20:
+    H = str(H)
+    if int(H[1]) == 1:
+        S = S + " " + B[0] + " " + C[0]
+print(S)
