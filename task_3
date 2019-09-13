@@ -1,1 +1,9 @@
-
+#Заметка:
+# 1 учебное занятие
+# 2, 3, 4 учебных занятия
+# 5, 6, 7, 8, 9, 10 учебных занятий
+A = ["odno", "dva", "tri", "chetyre","pyat","shest","sem", "vosem","devyat","desyat",
+"odinnadtsat","dvennadtsat","trinnadtsat","chetyrnadsat","pyatnadsat","shestnadsat", "semnadsat", "devyatnadsat",
+"dvadtsat","tridsat","sorok"]
+B = ["uchebnoe", "uchebnyh"]
+C = ["zanyatie", "zanyatie", "zanyatiy"]
