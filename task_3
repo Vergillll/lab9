@@ -7,7 +7,7 @@ A = ["odno", "dva", "tri", "chetyre","pyat","shest","sem", "vosem","devyat","des
 "odinnadtsat","dvennadtsat","trinnadtsat","chetyrnadsat","pyatnadsat","shestnadsat", "semnadsat","vosemnyadsat", "devyatnadsat",
 "dvadtsat","tridsat","sorok"]
 B = ["uchebnoe", "uchebnyh"]
-C = ["zanyatie", "zanyatie", "zanyatiy"]
+C = ["zanyatie", "zanyatiya", "zanyatiy"]
 S = ""
 H = int(input())
 
@@ -23,8 +23,18 @@ elif H>20:
     elif H == 40:
         S = S + A[21]
         
+if H >=10 and H <=20:
+    S = S + " " + B[1] + " " + C[2]
+if H %10==0:
+    S = S + " " + B[1] + " " + C[2]
 if H >20:
     H = str(H)
     if int(H[1]) == 1:
         S = S + " " + B[0] + " " + C[0]
+    elif int(H[1]) >= 2 and int(H[1]) <=4:
+        S = S + " " + B[1] + " " + C[1]
+    elif int(H[1]) >4:
+        S = S + " " + B[1] + " " + C[2]
+    H = int(H)
+        
 print(S)
