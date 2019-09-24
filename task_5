@@ -1,0 +1,41 @@
+# 60 лет
+# 5 подциклов по 12 лет: зелёный красный желтый белый чёрный
+# Года подциклов: крыса корова тигр заяц дракон змея лошадь овца обезьяна курица собака свинья
+# Старт с 1984 года, зелёная крыса (1 подцикл, 1 год)
+
+# Решение: |1984 - x| - номер (например, 32). Два массива. Деление с остатком. Целочисленное деление в переменную.
+
+Y = int(input())
+NY = abs(1984 - Y) % 60
+print(NY)
+
+NYC = NY // 12
+print(NYC)
+
+NYN = NY % 12
+print(NYN)
+
+if NYN > 0:
+    NYC += 1
+print("New C" + str(NYC))
+
+Cycle_5 = ["Green", "Red", "Yellow", "White", "Black"]
+Cycle_12 = ["Rat", "Cow", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Sheep", "Monkey", "Chicken", "Fog", "Pig"]
+
+S = ""
+
+if 1984 - Y < 0:
+    if NY == 0:
+        S = S + str(Y) + " is year of " + Cycle_5[NYC] + " " + Cycle_12[NYN]
+    else:
+        S = S + str(Y) + " is year of " + Cycle_5[NYC-1] + " " + Cycle_12[NYN]
+else:
+    Cycle_5 = Cycle_5.reverse()
+    Cycle_12 = Cycle_12.reverse()
+    if NY == 0:
+        S = S + str(Y) + " is year of " + Cycle_5[NYC] + " " + Cycle_12[NYN]
+    else:
+        S = S + str(Y) + " is year of " + Cycle_5[NYC-1] + " " + Cycle_12[NYN]
+
+print(S)
+
