@@ -1,6 +1,24 @@
 a = str(input())
 
 Ed = ["odin", "dva", "tri", "chetyre", "pyat", "shest", "sem", "vosem", "devyat"]
-Des = ["desyat", "dvadsat", "tridsat", "sorok", "pyatdesyat", """"""""]
-des-dvad
-Sot
+Des = ["desyat", "dvadsat", "tridsat", "sorok", "pyatdesyat", "shestdesyat", "semdesyat", "vosemdesyat", "devyanosto"]
+des_dvad = ["odinnadsat", "dvennadsat", "trinadsat","chetyrnadsat", "pyatnadsat", "shestnadsat", "semnadsat", "vosemnadsat", "devyatnadsat"]
+Sot = ["sto", "dvesty", "trista", "chetyresta", "pyatsot", "shestot", "semsot", "vosemsot", "devyatsot"]
+
+s = a[0]
+d = a[1]
+e = a[2]
+
+S = ""
+S = S+Sot[int(s) - 1]
+
+if int(a[1] + a[2]) >= 11 and int(a[1] + a[2]) <= 19:
+    S = S + " " + des_dvad[int(e) - 1]
+elif int(d) == 0:
+    S = S + " " + Ed[int(e) - 1]
+elif int(d) > 1:
+    S = S + " " + Des[int(d) - 1] + " " + Ed[int(e) - 1]
+else:
+    print(S)
+
+print(S)
