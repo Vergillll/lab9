@@ -4,38 +4,33 @@
 # Старт с 1984 года, зелёная крыса (1 подцикл, 1 год)
 
 # Решение: |1984 - x| - номер (например, 32). Два массива. Деление с остатком. Целочисленное деление в переменную.
+Cycle_5 = ["Green", "Red", "Yellow", "White", "Black"]
+Cycle_12 = ["Rat", "Cow", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Sheep", "Monkey", "Chicken", "Dog", "Pig"]
 
 Y = int(input())
-NY = abs(1984 - Y) % 60
-print(NY)
+print("Year: " + str(Y))
 
-NYC = NY // 12
-print(NYC)
+C_60 = abs(1984 - Y)
+print("Years from 1984: " + str(C_60))
 
-NYN = NY % 12
-print(NYN)
+if Y > 1984 or Y == 1984:
+    C_5 = C_60 // 12
+    C_12 = C_60 % 12
+    
+elif Y < 1984 and C_60 % 12 == 0:
+    C_5 = abs(C_60 // 12 - 5)
+    C_12 = abs(C_60 % 12)
+    
+elif Y < 1984:
+    C_5 = abs(C_60 // 12 - 4)
+    C_12 = abs(C_60 % 12 - 12)
+    
+if C_5 > 4:
+    C_5 = C_5 % 5
+    
+print("Cycle number is: " + str(C_5))
+print("Cycle year is: " + str(C_12))
 
-if NYN > 0:
-    NYC += 1
-print("New C" + str(NYC))
-
-Cycle_5 = ["Green", "Red", "Yellow", "White", "Black"]
-Cycle_12 = ["Rat", "Cow", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Sheep", "Monkey", "Chicken", "Fog", "Pig"]
-
-S = ""
-
-if 1984 - Y < 0:
-    if NY == 0:
-        S = S + str(Y) + " is year of " + Cycle_5[NYC] + " " + Cycle_12[NYN]
-    else:
-        S = S + str(Y) + " is year of " + Cycle_5[NYC-1] + " " + Cycle_12[NYN]
-else:
-    Cycle_5 = Cycle_5.reverse()
-    Cycle_12 = Cycle_12.reverse()
-    if NY == 0:
-        S = S + str(Y) + " is year of " + Cycle_5[NYC] + " " + Cycle_12[NYN]
-    else:
-        S = S + str(Y) + " is year of " + Cycle_5[NYC-1] + " " + Cycle_12[NYN]
-
+S = str(Y) + " Is yeat of: "
+S = S + Cycle_5[C_5] + " " + Cycle_12[C_12]
 print(S)
-
